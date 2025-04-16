@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eventos</title>
+
+  <!-- Fonte Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #333;
+      padding-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 30px 0 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #FEC223;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin: 0 auto;
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .filtros {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .filtros select {
+      padding: 10px 15px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      background: #f9f9f9;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .evento {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .evento:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .info {
+      padding: 15px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .info h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .info a {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .info a:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-circle">
+      <img src="https://i.imgur.com/wimsEb9.jpeg" alt="E Hoje?" />
+    </div>
+  </header>
+
+  <div class="filtros">
+    <select id="filtroTipo">
+      <option value="todos">Todos os Tipos</option>
+      <option value="bar">Bares</option>
+      <option value="balada">Baladas</option>
+    </select>
+
+    <select id="filtroCidade">
+      <option value="todas">Todas as Cidades</option>
+      <option value="taubate">Taubaté</option>
+      <option value="sanja">Sanja</option>
+      <option value="pinda">Pinda</option>
+    </select>
+  </div>
+
+  <div class="galeria" id="galeria"></div>
+
+  <script>
+    const eventos = [
+      {
+        nome: "Capitão Mor",
+        imagens: ["https://i.imgur.com/mSdqNrG.jpeg"],
+        instagram: "https://www.instagram.com/barcapitaomor?igsh=YWM3YjJieTZvaWhj",
+        tipo: "balada",
+        cidade: "taubate"
+      },
+      {
+        nome: "Jardim Cultural",
+        imagens: ["https://i.imgur.com/fMVDbXM.jpeg"],
+        instagram: "https://www.instagram.com/ojardimcultural?igsh=MmVwdG9xYnpzdnY2",
+        tipo: "balada",
+        cidade: "taubate"
+      },
+      {
+        nome: "The Hop",
+        imagens: [
+          "https://i.imgur.com/9sqUtIX.jpeg",
+          "https://i.imgur.com/z0nDvPt.jpeg"
+        ],
+        instagram: "https://www.instagram.com/thehopbeergarden?igsh=MTZnbXV4bTh5OTRvcw==",
+        tipo: "bar",
+        cidade: "pinda"
+      },
+      {
+        nome: "Santo Onofre",
+        imagens: [
+          "https://i.imgur.com/fXf1Epc.jpeg",
+          "https://i.imgur.com/5lz6K3A.jpeg"
+        ],
+        instagram: "https://www.instagram.com/santonofrebar?igsh=Z3J5d2l4bHRxanVm",
+        tipo: "balada",
+        cidade: "sanja"
+      },
+      {
+        nome: "Pink Elephant",
+        imagens: ["https://i.imgur.com/bR5NfB4.jpeg"],
+        instagram: "https://www.instagram.com/pinkelephantsjc?igsh=a2dqbmgwbDYxODl1",
+        tipo: "balada",
+        cidade: "sanja"
+      },
+      {
+        nome: "Goró do Rabicó",
+        imagens: ["https://i.imgur.com/uDPTJJO.jpeg"],
+        instagram: "https://www.instagram.com/goro_do_rabico?igsh=cDFkYzBsYzR2OTY1",
+        tipo: "bar",
+        cidade: "taubate"
+      },
+      {
+        nome: "Jeca",
+        imagens: [
+          "https://i.imgur.com/SBHapLE.jpeg",
+          "https://i.imgur.com/cn24Ovq.jpeg",
+          "https://i.imgur.com/4UtzXzv.jpeg"
+        ],
+        instagram: "https://www.instagram.com/jecataubate?igsh=ZWY2eWRjcGlrM2Fo",
+        tipo: "bar",
+        cidade: "taubate"
+      }
+    ];
+
+    const galeria = document.getElementById("galeria");
+    const filtroTipo = document.getElementById("filtroTipo");
+    const filtroCidade = document.getElementById("filtroCidade");
+
+    function renderEventos() {
+      galeria.innerHTML = '';
+      const tipoSelecionado = filtroTipo.value;
+      const cidadeSelecionada = filtroCidade.value;
+
+      eventos.forEach((evento, index) => {
+        if (
+          (tipoSelecionado === "todos" || evento.tipo === tipoSelecionado) &&
+          (cidadeSelecionada === "todas" || evento.cidade === cidadeSelecionada)
+        ) {
+          const card = document.createElement("div");
+          card.classList.add("evento");
+
+          if (evento.imagens.length === 1) {
+            card.innerHTML = `
+              <div class="carousel">
+                <div class="carousel-images">
+                  <img src="${evento.imagens[0]}" alt="${evento.nome}">
+                </div>
+              </div>
+              <div class="info">
+                <h2>${evento.nome}</h2>
+                <a href="${evento.instagram}" target="_blank">Instagram</a>
+              </div>
+            `;
+          } else {
+            const imagensHTML = evento.imagens.map(url => <img src="${url}" alt="${evento.nome}">).join('');
+            card.innerHTML = `
+              <div class="carousel" data-index="${index}">
+                <div class="carousel-images">${imagensHTML}</div>
+                <button class="carousel-button prev">&#10094;</button>
+                <button class="carousel-button next">&#10095;</button>
+              </div>
+              <div class="info">
+                <h2>${evento.nome}</h2>
+                <a href="${evento.instagram}" target="_blank">Instagram</a>
+              </div>
+            `;
+          }
+
+          galeria.appendChild(card);
+        }
+      });
+
+      document.querySelectorAll('.carousel').forEach(carousel => {
+        const imagesContainer = carousel.querySelector('.carousel-images');
+        const total = imagesContainer.children.length;
+        let currentIndex = 0;
+
+        if (total <= 1) return;
+
+        const updateCarousel = () => {
+          imagesContainer.style.transform = translateX(-${currentIndex * 100}%);
+        };
+
+        const prevBtn = carousel.querySelector('.prev');
+        const nextBtn = carousel.querySelector('.next');
+
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + total) % total;
+            updateCarousel();
+          });
+
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % total;
+            updateCarousel();
+          });
+        }
+
+        updateCarousel();
+      });
+    }
+
+    filtroTipo.addEventListener("change", renderEventos);
+    filtroCidade.addEventListener("change", renderEventos);
+
+    renderEventos();
+  </script>
+
+</body>
+</html>
