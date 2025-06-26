@@ -628,7 +628,6 @@
             border-radius: var(--radius);
             padding: 40px;
             box-shadow: var(--shadow);
-            position: relative;
         }
         
         .form-group {
@@ -663,68 +662,6 @@
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
-        }
-        
-        /* Thank You Message */
-        .thank-you-message {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 43, 68, 0.95);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-        
-        .thank-you-content {
-            background: white;
-            border-radius: var(--radius);
-            padding: 50px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: var(--shadow);
-            color: var(--dark);
-            position: relative;
-        }
-        
-        .thank-you-icon {
-            font-size: 80px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .thank-you-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .thank-you-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: var(--gray);
-        }
-        
-        .close-thank-you {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .close-thank-you:hover {
-            color: var(--secondary);
         }
         
         /* Footer */
@@ -880,10 +817,6 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .thank-you-content {
-                padding: 30px;
-            }
         }
         
         @media (max-width: 576px) {
@@ -897,10 +830,6 @@
             
             .projects-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .thank-you-content h2 {
-                font-size: 1.8rem;
             }
         }
     </style>
@@ -930,22 +859,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Thank You Message Overlay -->
-    <div class="thank-you-message" id="thankYouMessage">
-        <div class="thank-you-content">
-            <button class="close-thank-you" id="closeThankYou">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="thank-you-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h2>Thank You for Your Message!</h2>
-            <p>We've received your request and will contact you within 24-48 hours to discuss your project.</p>
-            <p>Our team is excited to help transform your space with our construction and renovation expertise.</p>
-            <a href="#home" class="btn btn-primary">Back to Homepage</a>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1117,7 +1030,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-4.0.3" alt="Kitchen Renovation">
+                        <img src="https://i.imgur.com/pd7vx9D.jpeg" alt="Kitchen Renovation">
                     </div>
                     <div class="project-overlay">
                         <h3>Modern Kitchen</h3>
@@ -1127,7 +1040,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="Living Room Renovation">
+                        <img src="https://i.imgur.com/Ghae02J.jpeg" alt="Living Room Renovation">
                     </div>
                     <div class="project-overlay">
                         <h3>Integrated Living Room</h3>
@@ -1137,11 +1050,21 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1631889992043-8d9d8b9b9b9b?ixlib=rb-4.0.3" alt="Bathroom Renovation">
+                        <img src="https://i.imgur.com/baD9pkg.jpeg" alt="Bathroom Renovation">
                     </div>
                     <div class="project-overlay">
                         <h3>Premium Bathroom</h3>
                         <p>Complete renovation with porcelain tile and glass shower</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://i.imgur.com/1zXauah.jpeg" alt="Dream Deck">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Dream Deck</h3>
+                        <p>Enhance your outdoor living with this beautiful deck</p>
                         <a href="#" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
@@ -1271,7 +1194,14 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form action="https://formsubmit.co/b1d329b9f5cb32ed88b8a5323f78976a" method="POST">
+                        <!-- Campos ocultos CORRIGIDOS -->
+                        <input type="hidden" name="_subject" value="Novo orçamento - BTY Solutions">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="?success=true">
+                        <input type="text" name="_honey" style="display:none">
+
                         <!-- Campos do formulário -->
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -1302,12 +1232,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" class="form-control" placeholder="Describe your project or questions" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">
-                            <span id="submitText">Send Request</span>
-                            <span id="spinner" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i> Sending...
-                            </span>
-                        </button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
                     </form>
                 </div>
             </div>
@@ -1425,54 +1350,15 @@
             });
         });
 
-        // Form submission handling
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const submitText = document.getElementById('submitText');
-        const spinner = document.getElementById('spinner');
-        const thankYouMessage = document.getElementById('thankYouMessage');
-        const closeThankYou = document.getElementById('closeThankYou');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
+        // Verificar se o formulário foi enviado com sucesso
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('Thank you for your message! We will contact you soon.');
                 
-                // Show loading state
-                submitText.style.display = 'none';
-                spinner.style.display = 'inline';
-                submitBtn.disabled = true;
-                
-                try {
-                    // Simulate form submission (in a real scenario, send to your server)
-                    // For demo purposes, we'll just show the success message
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-                    
-                    // Show thank you message
-                    thankYouMessage.style.display = 'flex';
-                    
-                    // Reset form
-                    contactForm.reset();
-                } catch (error) {
-                    console.error('Error submitting form:', error);
-                    alert('There was an error submitting your form. Please try again.');
-                } finally {
-                    // Restore button state
-                    submitText.style.display = 'inline';
-                    spinner.style.display = 'none';
-                    submitBtn.disabled = false;
-                }
-            });
-        }
-
-        // Close thank you message
-        closeThankYou.addEventListener('click', function() {
-            thankYouMessage.style.display = 'none';
-        });
-
-        // Close thank you message when clicking outside content
-        thankYouMessage.addEventListener('click', function(e) {
-            if (e.target === thankYouMessage) {
-                thankYouMessage.style.display = 'none';
+                // Limpar a URL
+                const newUrl = window.location.href.split('?')[0];
+                window.history.replaceState({}, document.title, newUrl);
             }
         });
     </script>
