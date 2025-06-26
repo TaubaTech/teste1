@@ -664,6 +664,55 @@
             resize: vertical;
         }
         
+        /* Thank You Page Styles */
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        
+        .thank-you-icon {
+            width: 120px;
+            height: 120px;
+            background: rgba(0, 43, 68, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-size: 60px;
+        }
+        
+        .thank-you-content {
+            max-width: 700px;
+        }
+        
+        .thank-you-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .thank-you-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .thank-you-contact {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        
         /* Footer */
         footer {
             background: var(--primary);
@@ -780,6 +829,10 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            
+            .thank-you-content h1 {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -831,6 +884,14 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .thank-you-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .thank-you-content p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -860,437 +921,461 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Complete Solutions for Renovations and Construction</h1>
-            <p>We transform spaces with quality, innovation, and commitment. Carpentry, tiling, flooring, bathrooms, and custom cabinets for your home or business.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Our Services</a>
-                <a href="#contact" class="btn btn-outline" style="border-color: white; color: white;">Request Quote</a>
+    <!-- Thank You Page (hidden by default) -->
+    <div id="thankYouPage" style="display: none;">
+        <div class="thank-you-container">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer complete solutions for renovations and construction with exceptional quality and attention to detail.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3" alt="Carpentry">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Carpentry</h3>
-                        <p>Custom furniture, doors, windows, and wooden structures with impeccable finishing.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3" alt="Tiling">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-border-style"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Tiling</h3>
-                        <p>Professional installation of ceramics, porcelain, and mosaics with perfect alignment.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1549478069-47f687c54f84?ixlib=rb-4.0.3" alt="Flooring">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-border-all"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Flooring</h3>
-                        <p>Installation of laminate, vinyl, porcelain, and wood flooring with quality guarantee.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1615529162924-f8605388463a?ixlib=rb-4.0.3" alt="Bathrooms">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-bath"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Bathrooms</h3>
-                        <p>Complete bathroom renovations with modern design and practical solutions.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3" alt="Cabinets">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-archive"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Cabinets</h3>
-                        <p>Custom kitchens, closets, and cabinets to optimize your space.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3" alt="Complete Renovations">
-                    </div>
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Complete Renovations</h3>
-                        <p>Full transformation of residential and commercial spaces with integrated design.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="BTY Solutions Team">
-                    <div class="experience-badge">10+ Years of Experience</div>
-                </div>
-                <div class="about-content">
-                    <h2>About BTY Solutions</h2>
-                    <p>With over a decade of experience in the market, BTY Solutions stands out for excellence in construction and renovation services. Our team of highly qualified professionals is committed to exceeding your expectations.</p>
-                    <p>We value each project as unique, dedicating special attention to the needs and desires of each client. From conception to execution, we guarantee quality, punctuality, and transparency at every stage.</p>
-                    
-                    <div class="features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                            <div>
-                                <h4>Guaranteed Quality</h4>
-                                <p>Premium materials and specialized workforce</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <div>
-                                <h4>Punctuality</h4>
-                                <p>Deliveries within agreed deadlines</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-euro-sign"></i>
-                            </div>
-                            <div>
-                                <h4>Best Cost-Benefit</h4>
-                                <p>Transparent and competitive quotes</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recent Projects</h2>
-                <p>Check out some of our works executed with excellence and attention to detail.</p>
-            </div>
-            
-            <div class="projects-filter">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Residential</button>
-                <button class="filter-btn">Commercial</button>
-                <button class="filter-btn">Kitchens</button>
-                <button class="filter-btn">Bathrooms</button>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-4.0.3" alt="Kitchen Renovation">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Modern Kitchen</h3>
-                        <p>Complete renovation with custom cabinets and central island</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="Living Room Renovation">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Integrated Living Room</h3>
-                        <p>Space integration with laminate flooring and LED lighting</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1631889992043-8d9d8b9b9b9b?ixlib=rb-4.0.3" alt="Bathroom Renovation">
-                    </div>
-                    <div class="project-overlay">
-                        <h3>Premium Bathroom</h3>
-                        <p>Complete renovation with porcelain tile and glass shower</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Work Process</h2>
-                <p>A clear and organized method to ensure excellence in every project.</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Initial Consultation</h3>
-                    <p>We discuss to understand your needs and expectations</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Quote</h3>
-                    <p>We prepare a detailed and transparent proposal</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Planning</h3>
-                    <p>We develop the project and execution schedule</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Execution</h3>
-                    <p>Qualified team performs the work with quality</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">5</div>
-                    <h3>Delivery</h3>
-                    <p>Final review and delivery of the completed project</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">6</div>
-                    <h3>Warranty</h3>
-                    <p>Post-work follow-up and service warranty</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-                <p>Testimonials from those who have trusted our work</p>
-            </div>
-            
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "I hired BTY Solutions to renovate my kitchen and was impressed with the quality of the work. The custom cabinets turned out perfect and the team was extremely professional, respectful, and punctual. I highly recommend them!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MC</div>
-                        <div class="author-info">
-                            <h4>Maria Carvalho</h4>
-                            <p>Residential - São Paulo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Request a Quote</h2>
-                <p>We're ready to transform your space. Contact us!</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>Fill out the form on the side or use our service channels. We'll respond as soon as possible.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Address</h4>
-                                <p>Av. das Construções, 1234, Centro, São Paulo/SP</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>(484) 725-9225</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>btysolutions@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4>Business Hours</h4>
-                                <p>Mon-Fri: 8am to 6pm | Sat: 8am to 12pm</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="thank-you-content">
+                <h1>Thank You for Contacting Us!</h1>
+                <p>Your message has been successfully sent to BTY Solutions. Our team will review your request and contact you within 24-48 hours to discuss your project.</p>
+                <p>We appreciate your interest in our services and look forward to working with you!</p>
                 
-                <div class="contact-form">
-                    <form action="https://formsubmit.co/b1d329b9f5cb32ed88b8a5323f78976a" method="POST">
-                        <!-- Campos ocultos CORRIGIDOS -->
-                        <input type="hidden" name="_subject" value="Novo orçamento - BTY Solutions">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="?success=true">
-                        <input type="text" name="_honey" style="display:none">
-
-                        <!-- Campos do formulário -->
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service of Interest</label>
-                            <select id="service" name="service" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option value="carpentry">Carpentry</option>
-                                <option value="tile">Tiling</option>
-                                <option value="flooring">Flooring</option>
-                                <option value="bathrooms">Bathrooms</option>
-                                <option value="cabinets">Cabinets</option>
-                                <option value="complete">Complete Renovation</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Describe your project or questions" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
-                    </form>
+                <div class="thank-you-contact">
+                    <h3>In the meantime...</h3>
+                    <p>Feel free to explore more about our services or contact us directly:</p>
+                    <p><i class="fas fa-phone-alt"></i> (484) 725-9225</p>
+                    <p><i class="fas fa-envelope"></i> btysolutions@gmail.com</p>
+                    <a href="#home" class="btn btn-primary" style="margin-top: 20px;">Back to Homepage</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="logo">
-                        <div class="logo-icon">
+    <!-- Main Content (visible by default) -->
+    <div id="mainContent">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Complete Solutions for Renovations and Construction</h1>
+                <p>We transform spaces with quality, innovation, and commitment. Carpentry, tiling, flooring, bathrooms, and custom cabinets for your home or business.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-outline" style="border-color: white; color: white;">Request Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>We offer complete solutions for renovations and construction with exceptional quality and attention to detail.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3" alt="Carpentry">
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Carpentry</h3>
+                            <p>Custom furniture, doors, windows, and wooden structures with impeccable finishing.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3" alt="Tiling">
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-border-style"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Tiling</h3>
+                            <p>Professional installation of ceramics, porcelain, and mosaics with perfect alignment.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1549478069-47f687c54f84?ixlib=rb-4.0.3" alt="Flooring">
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-border-all"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Flooring</h3>
+                            <p>Installation of laminate, vinyl, porcelain, and wood flooring with quality guarantee.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1615529162924-f8605388463a?ixlib=rb-4.0.3" alt="Bathrooms">
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-bath"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Bathrooms</h3>
+                            <p>Complete bathroom renovations with modern design and practical solutions.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3" alt="Cabinets">
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Cabinets</h3>
+                            <p>Custom kitchens, closets, and cabinets to optimize your space.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3" alt="Complete Renovations">
+                        </div>
+                        <div class="service-icon">
                             <i class="fas fa-home"></i>
                         </div>
-                        <div class="logo-text">BTY<span> Solutions</span></div>
-                    </div>
-                    <p>Complete solutions for renovations and construction with exceptional quality and commitment to customers since 2010.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                        <div class="service-content">
+                            <h3>Complete Renovations</h3>
+                            <p>Full transformation of residential and commercial spaces with integrated design.</p>
+                            <a href="#" class="btn btn-outline">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-links-section">
-                    <h3 class="footer-title">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Carpentry</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tiling</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Flooring</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Bathrooms</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cabinets</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-section">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links-section">
-                    <h3 class="footer-title">Contact</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Av. Construções, 1234 - SP</a></li>
-                        <li><a href="tel:+551155551234"><i class="fas fa-phone-alt"></i> (484) 725-9225</a></li>
-                        <li><a href="mailto:btysolutions@gmail.com"><i class="fas fa-envelope"></i> btysolutions@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8am to 6pm</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="BTY Solutions Team">
+                        <div class="experience-badge">10+ Years of Experience</div>
+                    </div>
+                    <div class="about-content">
+                        <h2>About BTY Solutions</h2>
+                        <p>With over a decade of experience in the market, BTY Solutions stands out for excellence in construction and renovation services. Our team of highly qualified professionals is committed to exceeding your expectations.</p>
+                        <p>We value each project as unique, dedicating special attention to the needs and desires of each client. From conception to execution, we guarantee quality, punctuality, and transparency at every stage.</p>
+                        
+                        <div class="features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div>
+                                    <h4>Guaranteed Quality</h4>
+                                    <p>Premium materials and specialized workforce</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div>
+                                    <h4>Punctuality</h4>
+                                    <p>Deliveries within agreed deadlines</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-euro-sign"></i>
+                                </div>
+                                <div>
+                                    <h4>Best Cost-Benefit</h4>
+                                    <p>Transparent and competitive quotes</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Contact Us</a>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 BTY Solutions. All rights reserved.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Recent Projects</h2>
+                    <p>Check out some of our works executed with excellence and attention to detail.</p>
+                </div>
+                
+                <div class="projects-filter">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Residential</button>
+                    <button class="filter-btn">Commercial</button>
+                    <button class="filter-btn">Kitchens</button>
+                    <button class="filter-btn">Bathrooms</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-4.0.3" alt="Kitchen Renovation">
+                        </div>
+                        <div class="project-overlay">
+                            <h3>Modern Kitchen</h3>
+                            <p>Complete renovation with custom cabinets and central island</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3" alt="Living Room Renovation">
+                        </div>
+                        <div class="project-overlay">
+                            <h3>Integrated Living Room</h3>
+                            <p>Space integration with laminate flooring and LED lighting</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1631889992043-8d9d8b9b9b9b?ixlib=rb-4.0.3" alt="Bathroom Renovation">
+                        </div>
+                        <div class="project-overlay">
+                            <h3>Premium Bathroom</h3>
+                            <p>Complete renovation with porcelain tile and glass shower</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Work Process</h2>
+                    <p>A clear and organized method to ensure excellence in every project.</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Initial Consultation</h3>
+                        <p>We discuss to understand your needs and expectations</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Quote</h3>
+                        <p>We prepare a detailed and transparent proposal</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Planning</h3>
+                        <p>We develop the project and execution schedule</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Execution</h3>
+                        <p>Qualified team performs the work with quality</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <h3>Delivery</h3>
+                        <p>Final review and delivery of the completed project</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <h3>Warranty</h3>
+                        <p>Post-work follow-up and service warranty</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Our Clients Say</h2>
+                    <p>Testimonials from those who have trusted our work</p>
+                </div>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "I hired BTY Solutions to renovate my kitchen and was impressed with the quality of the work. The custom cabinets turned out perfect and the team was extremely professional, respectful, and punctual. I highly recommend them!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MC</div>
+                            <div class="author-info">
+                                <h4>Maria Carvalho</h4>
+                                <p>Residential - São Paulo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Request a Quote</h2>
+                    <p>We're ready to transform your space. Contact us!</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Fill out the form on the side or use our service channels. We'll respond as soon as possible.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Av. das Construções, 1234, Centro, São Paulo/SP</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>(484) 725-9225</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>btysolutions@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Business Hours</h4>
+                                    <p>Mon-Fri: 8am to 6pm | Sat: 8am to 12pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <!-- Campos ocultos CORRIGIDOS -->
+                            <input type="hidden" name="_subject" value="Novo orçamento - BTY Solutions">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="text" name="_honey" style="display:none">
+
+                            <!-- Campos do formulário -->
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service of Interest</label>
+                                <select id="service" name="service" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="carpentry">Carpentry</option>
+                                    <option value="tile">Tiling</option>
+                                    <option value="flooring">Flooring</option>
+                                    <option value="bathrooms">Bathrooms</option>
+                                    <option value="cabinets">Cabinets</option>
+                                    <option value="complete">Complete Renovation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Describe your project or questions" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="logo">
+                            <div class="logo-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="logo-text">BTY<span> Solutions</span></div>
+                        </div>
+                        <p>Complete solutions for renovations and construction with exceptional quality and commitment to customers since 2010.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-links-section">
+                        <h3 class="footer-title">Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Carpentry</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tiling</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Flooring</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Bathrooms</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Cabinets</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h3 class="footer-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                            <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-section">
+                        <h3 class="footer-title">Contact</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Av. Construções, 1234 - SP</a></li>
+                            <li><a href="tel:+551155551234"><i class="fas fa-phone-alt"></i> (484) 725-9225</a></li>
+                            <li><a href="mailto:btysolutions@gmail.com"><i class="fas fa-envelope"></i> btysolutions@gmail.com</a></li>
+                            <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 8am to 6pm</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 BTY Solutions. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -1340,16 +1425,48 @@
             });
         });
 
-        // Verificar se o formulário foi enviado com sucesso
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                alert('Thank you for your message! We will contact you soon.');
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                // Limpar a URL
-                const newUrl = window.location.href.split('?')[0];
-                window.history.replaceState({}, document.title, newUrl);
-            }
+                // Simular envio bem-sucedido
+                const formData = new FormData(contactForm);
+                
+                // Simular envio para FormSubmit.co
+                fetch('https://formsubmit.co/ajax/b1d329b9f5cb32ed88b8a5323f78976a', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success === "true") {
+                        // Mostrar página de agradecimento
+                        document.getElementById('thankYouPage').style.display = 'block';
+                        document.getElementById('mainContent').style.display = 'none';
+                        
+                        // Rolar para o topo
+                        window.scrollTo(0, 0);
+                        
+                        // Esconder o header na página de agradecimento
+                        document.querySelector('header').style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting your form. Please try again.');
+                });
+            });
+        }
+
+        // Função para voltar à página principal
+        document.querySelector('.btn-primary[href="#home"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('thankYouPage').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            document.querySelector('header').style.display = 'block';
+            window.scrollTo(0, 0);
         });
     </script>
 </body>
