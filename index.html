@@ -1183,46 +1183,48 @@
                     </div>
                 </div>
                 
-<div class="contact-form">
-    <form action="https://formsubmit.co/b1d329b9f5cb32ed88b8a5323f78976a" method="POST">
-        <!-- Campos ocultos para personalizar o e-mail -->
-        <input type="hidden" name="_subject" value="Novo orçamento - BTY Solutions">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/b1d329b9f5cb32ed88b8a5323f78976a" method="POST">
+                        <!-- Campos ocultos CORRIGIDOS -->
+                        <input type="hidden" name="_subject" value="Novo orçamento - BTY Solutions">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="?success=true">
+                        <input type="text" name="_honey" style="display:none">
 
-        <!-- Campos do formulário (todos agora têm "name") -->
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
-        </div>
-        <div class="form-group">
-            <label for="service">Service of Interest</label>
-            <select id="service" name="service" class="form-control" required>
-                <option value="">Select a service</option>
-                <option value="carpentry">Carpentry</option>
-                <option value="tile">Tiling</option>
-                <option value="flooring">Flooring</option>
-                <option value="bathrooms">Bathrooms</option>
-                <option value="cabinets">Cabinets</option>
-                <option value="complete">Complete Renovation</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Describe your project or questions" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
-    </form>
-</div>
+                        <!-- Campos do formulário -->
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="carpentry">Carpentry</option>
+                                <option value="tile">Tiling</option>
+                                <option value="flooring">Flooring</option>
+                                <option value="bathrooms">Bathrooms</option>
+                                <option value="cabinets">Cabinets</option>
+                                <option value="complete">Complete Renovation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Describe your project or questions" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Request</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1301,16 +1303,6 @@
             });
         });
 
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! We will contact you soon.');
-                contactForm.reset();
-            });
-        }
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -1346,6 +1338,18 @@
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
             });
+        });
+
+        // Verificar se o formulário foi enviado com sucesso
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('Thank you for your message! We will contact you soon.');
+                
+                // Limpar a URL
+                const newUrl = window.location.href.split('?')[0];
+                window.history.replaceState({}, document.title, newUrl);
+            }
         });
     </script>
 </body>
