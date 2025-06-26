@@ -386,6 +386,7 @@
         .project-img {
             height: 280px;
             overflow: hidden;
+	    transition: transform 0.5s ease
         }
         
         .project-img img {
@@ -414,7 +415,17 @@
             text-align: center;
             opacity: 0;
             transition: opacity 0.4s ease;
+	    pointer-events: none;
         }
+	
+	@media (hover: none) and (pointer: coarse) {
+	.project-card.touch-active .project-overlay {
+	    opacity: 1;
+	}
+	.project-card.touch-active . project-img img {
+	    transform: scale(1:1);
+	}
+      }
         
         .project-card:hover .project-overlay {
             opacity: 1;
@@ -1523,6 +1534,33 @@
                 });
             }
         });
+
+	  // Detecta touch devices e adiciona classe ao tocar
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+           // Verifica se é um dispositivo touch
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+    
+    if (isTouchDevice) {
+        projectCards.forEach(card => {
+            // Adiciona classe ao tocar
+            card.addEventListener('touchstart', function() {
+                // Remove a classe de todos os cards primeiro
+                projectCards.forEach(c => c.classList.remove('touch-active'));
+                // Adiciona apenas ao card tocado
+                this.classList.add('touch-active');
+            });
+            
+            // Remove classe ao tocar em outro lugar
+            document.addEventListener('touchstart', function(e) {
+                if (!card.contains(e.target)) {
+                    card.classList.remove('touch-active');
+                }
+            });
+        });
+    }
+});
     </script>
 </body>
 </html>
