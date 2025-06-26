@@ -71,14 +71,14 @@
         }
         
         .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
+            background-color: var(--secondary);
+            color: white;
         }
         
         .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
+            background-color: #c77a1f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 140, 41, 0.3);
         }
         
         .section-padding {
@@ -367,6 +367,7 @@
         /* Projects Section */
         .projects {
             background-color: white;
+	    margin-bottom: 50px;
         }
         
         .projects-grid {
@@ -991,7 +992,7 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Complete Construction and Renovation Solutions</h1>
-            <p>Transform your space with our professional carpentry, tiling, flooring, and bathroom renovation services. Quality craftsmanship guaranteed.</p>
+            <p>Transform your space with our professional carpentry, tiling, cabinets, flooring, and bathroom renovation services. Quality craftsmanship guaranteed.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary">Our Services</a>
                 <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
@@ -1015,6 +1016,7 @@
                     <div class="service-content">
                         <h3>Carpentry</h3>
                         <p>Custom woodwork, cabinetry, and trim installations with precision and attention to detail.</p>
+                       
                     </div>
                 </div>
                 
@@ -1025,16 +1027,52 @@
                     <div class="service-content">
                         <h3>Tiling</h3>
                         <p>Professional tile installation for floors, walls, backsplashes, and showers.</p>
+                      
                     </div>
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Flooring">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Bathrooms">
+                    </div>
+                    <div class="service-content">
+                        <h3>Bathrooms</h3>
+                        <p>Complete bathroom renovations with modern design and practical solutions.</p>
+                   
+                    </div>
+                </div>
+
+		<div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Cabinets">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cabinets</h3>
+                        <p>Custom kitchens, closets, and cabinets to optimize your space.</p>
+                   
+                    </div>
+                </div>
+
+		<div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Flooring">
                     </div>
                     <div class="service-content">
                         <h3>Flooring</h3>
                         <p>Installation of hardwood, laminate, vinyl, and other flooring materials.</p>
+                  
+                    </div>
+                </div>
+
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Complete Renovations">
+                    </div>
+                    <div class="service-content">
+                        <h3>Complete Renovations</h3>
+                        <p>Full transformation of residential and commercial spaces with integrated design.</p>
+                    
                     </div>
                 </div>
             </div>
@@ -1051,24 +1089,24 @@
                 
                 <div class="about-content">
                     <h2>About BTY Solutions</h2>
-                    <p>With over 15 years of experience in the construction industry, BTY Solutions has built a reputation for excellence in renovation and remodeling projects.</p>
+                    <p>With over 10 years of experience in the construction industry, BTY Solutions has built a reputation for excellence in renovation and remodeling projects.</p>
                     <p>Our team of skilled professionals is dedicated to delivering high-quality craftsmanship, attention to detail, and exceptional customer service on every project.</p>
                     
                     <div class="about-stats">
                         <div class="stat-box">
                             <i class="fas fa-home"></i>
-                            <h3>500+</h3>
+                            <h3>200+</h3>
                             <p>Projects Completed</p>
                         </div>
                         <div class="stat-box">
                             <i class="fas fa-users"></i>
-                            <h3>25+</h3>
-                            <p>Expert Team Members</p>
+                            <h3>10+</h3>
+                            <p>Years of Experience</p>
                         </div>
                         <div class="stat-box">
                             <i class="fas fa-award"></i>
-                            <h3>12</h3>
-                            <p>Industry Awards</p>
+                            <h3>1</h3>
+                            <p>year of warranty for the services provided.</p>
                         </div>
                     </div>
                 </div>
@@ -1076,35 +1114,60 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects section-padding" id="projects">
+   <!-- Projects Section -->
+    <section class="projects" id="projects">
         <div class="container">
             <div class="section-title">
-                <h2>Dream Deck Projects</h2>
-                <p>Our premium deck construction and renovation solutions</p>
+                <h2>Recent Projects</h2>
+                <p>Check out some of our works executed with excellence and attention to detail.</p>
             </div>
+            
             
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
+                        <img src="https://i.imgur.com/pd7vx9D.jpeg" alt="Kitchen Renovation">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Modern Kitchen</h3>
+                        <p>Complete renovation with custom cabinets and central island</p>
+                       
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://i.imgur.com/Ghae02J.jpeg" alt="Living Room Renovation">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Integrated Living Room</h3>
+                        <p>Space integration with laminate flooring and LED lighting</p>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://i.imgur.com/baD9pkg.jpeg" alt="Bathroom Renovation">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Premium Bathroom</h3>
+                        <p>Complete renovation with porcelain tile and glass shower</p>
+                       
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
                         <img src="https://i.imgur.com/YRZCXni.jpeg" alt="Dream Deck">
                     </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Luxury Deck">
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Outdoor Deck">
+                    <div class="project-overlay">
+                        <h3>Dream Deck</h3>
+                        <p>Enhance your outdoor living with this beautiful deck</p>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Process Section -->
     <section class="process section-padding">
@@ -1117,26 +1180,26 @@
             <div class="process-steps">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Consultation</h3>
-                    <p>We discuss your vision, needs, and budget to understand your project requirements.</p>
+                    <h3>Initial Consultation</h3>
+                    <p>We discuss to understand your needs and expectations.</p>
                 </div>
                 
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Design & Planning</h3>
-                    <p>Our team creates detailed plans and 3D renderings to visualize your project.</p>
+                    <h3>Quote</h3>
+                    <p>We prepare a detailed and transparent proposal</p>
                 </div>
                 
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Material Selection</h3>
-                    <p>We help you choose the best materials that fit your style and budget.</p>
+                    <h3>Execution</h3>
+                    <p>Qualified team performs the work with quality.</p>
                 </div>
                 
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h3>Construction</h3>
-                    <p>Our skilled craftsmen execute the project with precision and attention to detail.</p>
+                    <h3>Warranty</h3>
+                    <p>Post-work follow-up and service warranty.</p>
                 </div>
             </div>
         </div>
@@ -1170,7 +1233,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Phone Number</h4>
-                            <a href="tel:+11234567890">+1 (123) 456-7890</a>
+                            <a href="tel:+1(484) 725-9225">+1 (123) 456-7890</a>
                         </div>
                     </div>
                     
@@ -1265,6 +1328,7 @@
                             <div class="author-info">
                                 <h4>Sarah Johnson</h4>
                                 <p>Kitchen Renovation Project</p>
+
                             </div>
                         </div>
                     </div>
@@ -1328,7 +1392,7 @@
                     <h4>Contact Us</h4>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Construction Ave, Building City</a></li>
-                        <li><a href="tel:+11234567890"><i class="fas fa-phone-alt"></i> +1 (123) 456-7890</a></li>
+                        <li><a href="tel:+11234567890"><i class="fas fa-phone-alt"></i> +1(484) 725-9225</a></li>
                         <li><a href="mailto:info@btysolutions.com"><i class="fas fa-envelope"></i> info@btysolutions.com</a></li>
                     </ul>
                 </div>
